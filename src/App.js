@@ -59,19 +59,21 @@ function Tweet({ avatarSrc, userName, accountName, body, createdDate, commentsCo
   );
 }
 
-const sortedTuits = tuits.map((tuit) => {
-  return (
-    <Tweet
-      avatarSrc={profileImg}
-      userName={tuit.creator.name}
-      accountName={tuit.creator.username}
-      body={tuit.body}
-      createdDate={tuit.creationDate}
-      commentsCount={tuit.commentsCount}
-      likesCount={tuit.likesCount}
-    />
-  );
-});
+const sortedTuits = tuits
+  .sort((a, b) => a.creationDate < b.creationDate)
+  .map((tuit) => {
+    return (
+      <Tweet
+        avatarSrc={profileImg}
+        userName={tuit.creator.name}
+        accountName={tuit.creator.username}
+        body={tuit.body}
+        createdDate={tuit.creationDate}
+        commentsCount={tuit.commentsCount}
+        likesCount={tuit.likesCount}
+      />
+    );
+  });
 
 function App() {
   return (
