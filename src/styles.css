@@ -1,3 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #1d2128;
+  color: #ffffff;
+}
+
 .app {
-  text-align: center;
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.tweet {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  margin: 2vh auto;
+  padding: 15px;
+  width: 600px;
+  height: 107.64px;
+  left: 420px;
+  top: 100px;
+  background: #1d2128;
+  border: 1px solid #999b9e;
+  box-sizing: border-box;
+}
+
+.profile-img {
+  border-radius: 100px;
+  width: 50px;
+  height: 50px;
+}
+
+.tweet-main-info,
+.tweet-body {
+  margin: 0;
+}
+
+.tweet-body {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.user-name,
+.greyed-text {
+  display: inline-flex;
+  align-items: center;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  margin-right: 4px;
+}
+
+.greyed-text {
+  font-size: 16px;
+  line-height: 20px;
+  color: #999b9e;
+}
+
+.tweet-footer {
+  width: 30%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.footer-info {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-icon {
+  width: 15.91px;
+  height: 14.97px;
+  margin-right: 4px;
 }
