@@ -22,7 +22,7 @@ function formatDate(date) {
   };
   const month = months[date.getUTCMonth()];
 
-  return `${month} ${date.getUTCDate()}`;
+  return `${date.getUTCDate()} ${month}`;
 }
 
 function Image({ className, source, alt }) {
