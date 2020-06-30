@@ -1,4 +1,5 @@
 import React from 'react';
+import tuits from './tuits';
 
 import profileImg from './images/profile.png';
 import commentsImg from './images/comments.png';
@@ -58,6 +59,20 @@ function Tweet({ avatarSrc, userName, accountName, body, createdDate, commentsCo
   );
 }
 
+const sortedTuits = tuits.map((tuit) => {
+  return (
+    <Tweet
+      avatarSrc={profileImg}
+      userName={tuit.creator.name}
+      accountName={tuit.creator.username}
+      body={tuit.body}
+      createdDate={tuit.creationDate}
+      commentsCount={tuit.commentsCount}
+      likesCount={tuit.likesCount}
+    />
+  );
+});
+
 function App() {
   return (
     <div className='app'>
@@ -88,6 +103,7 @@ function App() {
         commentsCount='555'
         likesCount='321'
       />
+      {sortedTuits}
     </div>
   );
 }
