@@ -59,7 +59,41 @@ function Tweet({ avatarSrc, userName, accountName, body, createdDate, commentsCo
   );
 }
 
+const ownTuits = [
+  {
+    creator: {
+      username: 'zongoku',
+      name: 'SonGoku',
+    },
+    body: 'Ready for Ruby on Rails module evaluation!',
+    creationDate: new Date(),
+    commentsCount: 39,
+    likesCount: 62,
+  },
+  {
+    creator: {
+      username: 'zongoku',
+      name: 'SonGoku',
+    },
+    body: 'Been quiet lately.',
+    creationDate: new Date('2020-05-11'),
+    commentsCount: 102,
+    likesCount: 22,
+  },
+  {
+    creator: {
+      username: 'zongoku',
+      name: 'SonGoku',
+    },
+    body: 'My first react component tweet!',
+    creationDate: new Date('2020-03-03'),
+    commentsCount: 555,
+    likesCount: 321,
+  },
+];
+
 const sortedTuits = tuits
+  .concat(ownTuits)
   .sort((a, b) => a.creationDate < b.creationDate)
   .map((tuit) => {
     return (
@@ -76,38 +110,7 @@ const sortedTuits = tuits
   });
 
 function App() {
-  return (
-    <div className='app'>
-      <Tweet
-        avatarSrc={profileImg}
-        userName='SonGoku'
-        accountName='zongoku'
-        body='Ready for Ruby on Rails module evaluation!'
-        createdDate={new Date()}
-        commentsCount='39'
-        likesCount='62'
-      />
-      <Tweet
-        avatarSrc={profileImg}
-        userName='SonGoku'
-        accountName='zongoku'
-        body='Been quiet lately.'
-        createdDate={new Date('2020-05-11')}
-        commentsCount='102'
-        likesCount='22'
-      />
-      <Tweet
-        avatarSrc={profileImg}
-        userName='SonGoku'
-        accountName='zongoku'
-        body='My first react component tweet!'
-        createdDate={new Date('2020-03-03')}
-        commentsCount='555'
-        likesCount='321'
-      />
-      {sortedTuits}
-    </div>
-  );
+  return <div className='app'>{sortedTuits}</div>;
 }
 
 export default App;
